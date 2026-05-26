@@ -216,29 +216,32 @@ def main():
 
 
 if __name__ == "__main__":
+    main()
 
-    ua = UserAgent()  # Экхемппляр классса фейс юзер агент
-    headers = {'User-Agent': ua.random,
-               "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"}  # заголовки
-    session = requests.Session()  # Экхемппляр классса  сессии. Главный объект для сетевых запросов
-    session.headers.update(headers)
+    # ua = UserAgent()  # Экхемппляр классса фейс юзер агент
+    # headers = {'User-Agent': ua.random,
+    #            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"}  # заголовки
+    # session = requests.Session()  # Экхемппляр классса  сессии. Главный объект для сетевых запросов
+    # session.headers.update(headers)
+    # 
+    # with open('product_urls.json', 'r', encoding='utf-8') as f:
+    #     data = json.load(f)
+    # 
+    # result = []
+    # 
+    # 
+    # for category_item in data:
+    #     product_result = []
+    #     print(f"Текущая категория: {category_item['category_name']}")
+    #     for url in category_item['product_urls']:
+    #         print(f"> {url}")
+    #         product_details = get_product_details(url, session)
+    #         product_result.append(product_details)
+    #     item = {'category_name': category_item['category_name'],
+    #             'products': product_result}
+    #     result.append(item)
+    # 
+    #     with open('reasult.json', 'w', encoding='utf-8') as f:
+    #         json.dump(result, f, ensure_ascii=False, indent=4)
 
-    with open('product_urls.json', 'r', encoding='utf-8') as f:
-        data = json.load(f)
 
-    result = []
-
-
-    for category_item in data:
-        product_result = []
-        print(f"Текущая категория: {category_item['category_name']}")
-        for url in category_item['product_urls']:
-            print(f"> {url}")
-            product_details = get_product_details(url, session)
-            product_result.append(product_details)
-        item = {'category_name': category_item['category_name'],
-                'products': product_result}
-        result.append(item)
-
-        with open('reasult.json', 'w', encoding='utf-8') as f:
-            json.dump(result, f, ensure_ascii=False, indent=4)
